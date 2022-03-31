@@ -74,8 +74,8 @@ In the problem of the token types, it seems that super economy on adding a new t
 ## **About me** ##
 
 ***
-I am attending the Computer Science Bachelor's course at the Saint-Petersburg campus of the Higher School of Economics. But if this is necessary, I am a citizen of Kyrgyz Rebuplic, and in connection with military operations in Ukraine, I am on the territory of KR now.
+I am attending the Computer Science Bachelor's course at the Saint-Petersburg campus of the Higher School of Economics. However, I am a citizen of the Kyrgyz Rebuplic and I am located in Bishkek right now.
 
 I have finished a Haskell course at my university, but this is only my experience with Haskell. Last 2 weeks in my free time I was diving into the `HLS` codebase. As a result, I understand how to build the project and have a general idea of how to add new features. Also, I figured out, that current docs are a bit out of date, so I am going to try to fix currently confusing parts as my first PR in the ramp-up to GSoC
 
-I had finished a Formal Languages course at my university, so I have experience in generating parsers and in building AST. Also in this course, I had a study project, that can analyse code in an abstract language and give information about integers values bounds. This information can be useful for static code analyzers, to determine integers overflow. This project was interesting for me, that's why I decided to choose `HLS` and start with semantic highlighting
+I had finished a Formal Languages course at my university, so I have experience in generating parsers and in building AST. During this course I had a study project, that can analyse code in an abstract language and give information about integers values bounds. This information can be useful for static code analyzers, to determine integers overflow. This project was interesting for me, that's why I decided to choose `HLS` and start with semantic highlighting
