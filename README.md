@@ -32,7 +32,7 @@ Expected deliverables:
 ***
 This part exists to make me sure, that my project understanding is correct
 
-We already have Semantic Tokens support in [LSP](https://github.com/haskell/lsp/pull/314). So the rest of the work, if I understand correctly, is implementing a creation of Semantic Tokens and sending them to the LSP client.
+We already have Semantic Tokens support in [LSP](https://github.com/haskell/lsp/pull/314). So the rest of the work, if I understand correctly, is implementing a creation of Semantic Tokens after analysis of document and sending them to the LSP client.
 
 ### **Way of implementation** ###
 
