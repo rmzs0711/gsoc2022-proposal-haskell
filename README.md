@@ -1,4 +1,4 @@
-<h2 style="text-align: center;">Semantic highlighting</h2>
+<h2 style="text-align: center;">Semantic highlighting and change annotations</h2>
 
 <h4 style="text-align: center;">Dzhekshembaev Ramazan</h4>
 
