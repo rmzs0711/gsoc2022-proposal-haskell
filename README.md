@@ -29,11 +29,11 @@ Expected deliverables:
 
 Change annotation motivation:
 
-* These let you annotate pieces of edits with notes explaining what they do, and in some clients may let the user review them before accepting
+* These let you annotate pieces of edits with notes explaining what they do, and some clients may let the user review them before accepting
 
 Expected deliverables:
 
-* Look inside plugins, that provide code edits (e.g. [Hlint](https://haskell-language-server.readthedocs.io/en/latest/features.html#apply-hlint-fixes)), and add possibility to add `change annotations`
+* Look inside plugins, that provide code edits (e.g. [Hlint](https://haskell-language-server.readthedocs.io/en/latest/features.html#apply-hlint-fixes)), and add the possibility to add `change annotations`
 
 ## **Tasks** ##
 
@@ -104,7 +104,7 @@ Maybe is a good idea to investigate existing plugins, that provide code edits, i
 
 ### May ###
 
-Familiarize more with the `HSL` code and `Semantic Highlight` implementations in other projects. Decide which way we want to go in realisation, which features we want to provide. Prepare a plugins general routine part and processing a request from client to server
+Familiarize more with the `HSL` code and `Semantic Highlight` implementations in other projects. Decide which way we want to go in realisation, and which features we want to provide. Prepare a plugins general routine part and process a request from the client to the server
 
 ### 30 May - 12 June ###
 
@@ -112,7 +112,7 @@ Implement a comfortable interface with which we can add highlighting of new targ
 
 ### 13 June - 1 July ###
 
-At this time I will have my university exams, so it is a high chance that my impact during this time will be in my minimum. However, I think it will be possible to finish with the simple targets of highlighting and test it.
+At this time I will have my university exams, so it is a high chance that my impact during this time will be at my minimum. However, I think it will be possible to finish with the simple targets of highlighting and testing it.
 
 ### 2 July - 17 July ###
 
@@ -120,17 +120,17 @@ Continue with other targets of highlighting, that are not so obvious for me: dep
 
 ### 18 July - 29 July ###
 
-Polish done work, add more tests, prepare to submitting Phase 1 evaluations
+Polish done work, add more tests, prepare to submit Phase 1 evaluations
 
 ### 30 July - 4 September ###
 
-Implement `Change annotations`. Since I started to study this topic recently, I am not confident in my vision of it, so that's why this part of shedule without details. Also `Change annotations` are for me is plan B, if `Semantic highlighting` will be ready by this time
+Implement `Change annotations`. Since I started to study this topic recently, I am not confident in my vision of it, so that's why this part of the schedule is without details. Also `Change annotations` are for me is plan B, if `Semantic highlighting` will be ready by this time
 
 ## **About me** ##
 
 ***
-I am attending the Computer Science Bachelor's course at the Saint-Petersburg campus of the Higher School of Economics. However, I am a citizen of the Kyrgyz Rebuplic and I am located in Bishkek right now.
+I am attending the Computer Science Bachelor's course at the Saint-Petersburg campus of the Higher School of Economics. However, I am a citizen of the Kyrgyz Repuplic and I am located in Bishkek right now.
 
-I have finished a Haskell course at my university, but this is only my experience with Haskell. Last 2 weeks in my free time I was diving into the `HLS` codebase. As a result, I understand how to build the project and have a general idea of how to add new features. Also I figured out that current docs are a bit out of date, so I am going to try to fix currently confusing parts as my first PR in the ramp-up to GSoC
+I have finished a Haskell course at my university, but this is only my experience with Haskell. Last 2 weeks in my free time I was diving into the `HLS` codebase. As a result, I understand how to build the project and have a general idea of how to add new features. Also, I figured out that current docs are a bit out of date, so I am going to try to fix currently confusing parts as my first PR in the ramp-up to GSoC
 
-I had finished a Formal Languages course at my university, so I have experience in generating parsers and in building AST. During this course I had a study project, that can analyse code in an abstract language and give information about integers values bounds. This information can be useful for static code analyzers, to determine integers overflow. This project was interesting for me, that's why I decided to choose `HLS` and start with semantic highlighting
+I had finished a Formal Languages course at my university, so I have experience in generating parsers and in building AST. During this course, I had a study project, that can analyse code in an abstract language and give information about integer values bounds. This information can be useful for static code analyzers, to determine integers overflow. This project was interesting for me, that's why I decided to choose `HLS` and start with semantic highlighting
