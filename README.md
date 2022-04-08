@@ -16,9 +16,9 @@ Phone number: +996-502-236-424
 ## **Abstract** ##
 
 ***
-This project intended to implement a semantic highlight feature.
+This project intended to implement a semantic highlight and a change annotation features
 
-Motivation issue:
+Semantic highlight motivation issue:
 
 * [#1654](https://github.com/haskell/haskell-language-server/issues/1654)
 
@@ -27,12 +27,25 @@ Expected deliverables:
 * Perform semantic highlight for tokens that match with Haskell correctly
 * Think about other types and maybe add new tokens that are better for Haskell things
 
+Change annotation motivation:
+
+* These let you annotate pieces of edits with notes explaining what they do, and in some clients may let the user review them before accepting
+
+Expected deliverables:
+
+* Look inside plugins, that provide code edits (e.g. [Hlint](https://haskell-language-server.readthedocs.io/en/latest/features.html#apply-hlint-fixes)), and add possibility to add `change annotations`
+
 ## **Tasks** ##
 
 ***
-This part exists to make me sure, that my project understanding is correct
 
-We already have Semantic Tokens support in [LSP](https://github.com/haskell/lsp/pull/314). So the rest of the work, if I understand correctly, is implementing a creation of Semantic Tokens after analysis of document and sending them to the LSP client.
+## Semantic highlight ##
+
+We already have Semantic Tokens support in [LSP](https://github.com/haskell/lsp/pull/314). So the rest of the work is implementing a creation of Semantic Tokens after analysis of document and sending them to the LSP client.
+
+### **Interaction between semantic and basic highlighting** ###
+
+[Basic highlighting](https://marketplace.visualstudio.com/items?itemName=justusadam.language-haskell) now is working inside another extension and LSP spec doesn't tell us about how 2 versions of highlighting will work together.
 
 ### **Way of implementation** ###
 
@@ -62,14 +75,56 @@ Based on **michalpj** comments in the same issue, I came to the conclusion, that
 
 [Token types and modifiers from VScode docs](https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide#standard-token-types-and-modifiers). It seems we have no problems with, for example, `class` or `method` token types, so we can implement highlighting for them correctly. But with the `data constructor` and `type constructor`, we haven't a suitable variant. We have an option to add a new token type, but this solution is contradicting of main LSP idea because we will add some work to the client to handle new tokens.
 
+## Change annotation ##
+
+I need to explore existing code edit features in order to formulate more accurate tasks. But now I have one abstract idea.
+
+Maybe we will need to think about general annotations format rules to make it more understandable.
+
 ## **Solution** ##
 
 ***
 In this part, I will share my thoughts about a solution.
 
-Apparently, **pepeiborra** and **michaelpj** agreed on option b) of realisation.
+## Semantic highlight ##
+
+**michaelpj**  suggested, that we will want to add the new functionality as a plugin, which may require tweaking the plugin infrastructure slightly, but that should be okay.
 
 In the problem of the token types, it seems that super economy on adding a new type is unnecessary, but the decision to create new types will add some extra routinely in `LSP`. Also I figured out that Kotlin and OCaml already have semantic syntax highlighting support, Scala has the same GSoC idea for the summer of 2022. So I think it will be a good idea to ask some questions to other contributors and investigate other solutions for other functional programming languages
+
+## Change annotation ##
+
+If I understand correctly, we don't need a new plugin or something like that, we need to add a functionality in existing plugins, that will add `change annotations` info in requests
+
+Maybe is a good idea to investigate existing plugins, that provide code edits, in order to generalize `change annotations` logic. As I see, this logics implementation can be not necessarily as a plugin, but as a library with useful functions.
+
+## **Tentative plan** ##
+
+***
+
+### May ###
+
+Familiarize more with the `HSL` code and `Semantic Highlight` implementations in other projects. Decide which way we want to go in realisation, which features we want to provide. Prepare a plugins general routine part and processing a request from client to server
+
+### 30 May - 12 June ###
+
+Implement a comfortable interface with which we can add highlighting of new targets more easily and test it. Start with the simple targets of highlighting: class method, class, type constructor, data constructor.
+
+### 13 June - 1 July ###
+
+At this time I will have my university exams, so it is a high chance that my impact during this time will be in my minimum. However, I think it will be possible to finish with the simple targets of highlighting and test it.
+
+### 2 July - 17 July ###
+
+Continue with other targets of highlighting, that are not so obvious for me: deprecated functional, Haskell syntax in doctest comments, maybe something else.
+
+### 18 July - 29 July ###
+
+Polish done work, add more tests, prepare to submitting Phase 1 evaluations
+
+### 30 July - 4 September ###
+
+Implement `Change annotations`. Since I started to study this topic recently, I am not confident in my vision of it, so that's why this part of shedule without details. Also `Change annotations` are for me is plan B, if `Semantic highlighting` will be ready by this time
 
 ## **About me** ##
 
