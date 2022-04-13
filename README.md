@@ -37,11 +37,11 @@ Expected deliverables:
 
 ### Semantic highlight ###
 
-We already have Semantic Tokens support in [LSP](https://github.com/haskell/lsp/pull/314). So the rest of the work is implementing a creation of Semantic Tokens after analysis of document and sending them to the LSP client.
+We already have Semantic Tokens support in [LSP](https://github.com/haskell/lsp/pull/314). So the rest of the work is implementing a creation of Semantic Tokens after analysis of the document and sending them to the LSP client.
 
 ### **Interaction between semantic and basic highlighting** ###
 
-[Basic highlighting](https://marketplace.visualstudio.com/items?itemName=justusadam.language-haskell) now is working inside another extension and LSP spec doesn't tell us about how 2 versions of highlighting will work together.
+[Basic highlighting](https://marketplace.visualstudio.com/items?itemName=justusadam.language-haskell) now is working inside another extension and LSP spec doesn't tell us how 2 versions of highlighting will work together.
 
 ### **Way of implementation** ###
 
@@ -85,13 +85,13 @@ In this part, I will share my thoughts about a solution.
 
 **michaelpj**  suggested, that we will want to add the new functionality as a plugin, which may require tweaking the plugin infrastructure slightly, but that should be okay.
 
-In the problem of the token types, it seems that super economy on adding a new type is unnecessary, but the decision to create new types will add some extra routinely in `LSP`. Also I figured out that Kotlin and OCaml already have semantic syntax highlighting support, Scala has the same GSoC idea for the summer of 2022. So I think it will be a good idea to ask some questions to other contributors and investigate other solutions for other functional programming languages
+In the problem of the token types, it seems that super economy on adding a new type is unnecessary, but the decision to create new types will add some extra routinely in `LSP`. Also, I figured out that Kotlin and OCaml already have semantic syntax highlighting support, Scala has the same GSoC idea for the summer of 2022. So I think it will be a good idea to ask some questions to other contributors and investigate other solutions for other functional programming languages
 
 ### Change annotation ###
 
 We don't need a new plugin or something like that, we need to add a functionality in existing plugins, that will add `change annotations` info in requests
 
-Maybe is a good idea to investigate existing plugins, that provide code edits, in order to generalize `change annotations` logic. As I see, this logics implementation can be not necessarily as a plugin, but as a library with useful functions.
+Maybe is a good idea to investigate existing plugins, that provide code edits, in order to generalize `change annotations` logic. As I see it, this logics implementation can be not necessarily as a plugin, but as a library with useful functions.
 
 ## **Tentative plan** ##
 
@@ -117,7 +117,7 @@ Polish done work, add more tests, prepare to submit Phase 1 evaluations
 
 ### 30 July - 7 August ###
 
-Explore `hlint` and `completions` plugins and investigate another servers, to figure it out, why they don't have change annotations yet.
+Explore `hlint` and `completions` plugins and investigate other servers, to figure out, why they don't have change annotations yet.
 
 ### 8 August - 22 August ###
 
@@ -129,7 +129,7 @@ Polish done work, prepare to submit Phase 2 evaluations
 
 ## **About me** ##
 
-I am attending the Computer Science Bachelor's course at the Saint-Petersburg campus of the Higher School of Economics. However, I am a citizen of the Kyrgyz Repuplic and I am located in Bishkek right now.
+I am attending the Computer Science Bachelor's course at the Saint-Petersburg campus of the Higher School of Economics. However, I am a citizen of the Kyrgyz Republic and I am located in Bishkek right now.
 
 I have finished a Haskell course at my university, but this is only my experience with Haskell. Last 2 weeks in my free time I was diving into the `HLS` codebase. As a result, I understand how to build the project and have a general idea of how to add new features. Also, I figured out that current docs are a bit out of date, so I am going to try to fix currently confusing parts as my first PR in the ramp-up to GSoC
 
