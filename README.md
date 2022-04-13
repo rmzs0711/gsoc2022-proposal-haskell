@@ -4,7 +4,6 @@
 
 ## **Contact info** ##
 
-***
 E-mail: rmzs0711@gmail.com
 
 Telegram: [@RMZS0711](https://t.me/RMZS0711)
@@ -15,7 +14,6 @@ Phone number: +996-502-236-424
 
 ## **Abstract** ##
 
-***
 This project intended to implement a semantic highlight and a change annotation features
 
 Semantic highlight motivation issue:
@@ -37,9 +35,7 @@ Expected deliverables:
 
 ## **Tasks** ##
 
-***
-
-## Semantic highlight ##
+### Semantic highlight ###
 
 We already have Semantic Tokens support in [LSP](https://github.com/haskell/lsp/pull/314). So the rest of the work is implementing a creation of Semantic Tokens after analysis of document and sending them to the LSP client.
 
@@ -75,32 +71,29 @@ Based on **michalpj** comments in the same issue, I came to the conclusion, that
 
 [Token types and modifiers from VScode docs](https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide#standard-token-types-and-modifiers). It seems we have no problems with, for example, `class` or `method` token types, so we can implement highlighting for them correctly. But with the `data constructor` and `type constructor`, we haven't a suitable variant. We have an option to add a new token type, but this solution is contradicting of main LSP idea because we will add some work to the client to handle new tokens.
 
-## Change annotation ##
-
-I need to explore existing code edit features in order to formulate more accurate tasks. But now I have one abstract idea.
+### Change annotation ###
 
 Maybe we will need to think about general annotations format rules to make it more understandable.
 
+Again, it would be good to see what other people are doing - **michaelpj** hasn't been able to find any other server implementation that uses change annotations, so maybe other servers have some unexpected problems with this feature.
+
 ## **Solution** ##
 
-***
 In this part, I will share my thoughts about a solution.
 
-## Semantic highlight ##
+### Semantic highlight ###
 
 **michaelpj**  suggested, that we will want to add the new functionality as a plugin, which may require tweaking the plugin infrastructure slightly, but that should be okay.
 
 In the problem of the token types, it seems that super economy on adding a new type is unnecessary, but the decision to create new types will add some extra routinely in `LSP`. Also I figured out that Kotlin and OCaml already have semantic syntax highlighting support, Scala has the same GSoC idea for the summer of 2022. So I think it will be a good idea to ask some questions to other contributors and investigate other solutions for other functional programming languages
 
-## Change annotation ##
+### Change annotation ###
 
-If I understand correctly, we don't need a new plugin or something like that, we need to add a functionality in existing plugins, that will add `change annotations` info in requests
+We don't need a new plugin or something like that, we need to add a functionality in existing plugins, that will add `change annotations` info in requests
 
 Maybe is a good idea to investigate existing plugins, that provide code edits, in order to generalize `change annotations` logic. As I see, this logics implementation can be not necessarily as a plugin, but as a library with useful functions.
 
 ## **Tentative plan** ##
-
-***
 
 ### May ###
 
@@ -128,7 +121,6 @@ Implement `Change annotations`. Since I started to study this topic recently, I 
 
 ## **About me** ##
 
-***
 I am attending the Computer Science Bachelor's course at the Saint-Petersburg campus of the Higher School of Economics. However, I am a citizen of the Kyrgyz Repuplic and I am located in Bishkek right now.
 
 I have finished a Haskell course at my university, but this is only my experience with Haskell. Last 2 weeks in my free time I was diving into the `HLS` codebase. As a result, I understand how to build the project and have a general idea of how to add new features. Also, I figured out that current docs are a bit out of date, so I am going to try to fix currently confusing parts as my first PR in the ramp-up to GSoC
