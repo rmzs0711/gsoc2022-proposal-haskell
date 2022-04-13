@@ -115,9 +115,17 @@ Continue with other targets of highlighting, that are not so obvious for me: dep
 
 Polish done work, add more tests, prepare to submit Phase 1 evaluations
 
-### 30 July - 4 September ###
+### 30 July - 7 August ###
 
-Implement `Change annotations`. Since I started to study this topic recently, I am not confident in my vision of it, so that's why this part of the schedule is without details. Also `Change annotations` are for me is plan B, if `Semantic highlighting` will be ready by this time
+Explore `hlint` and `completions` plugins and investigate another servers, to figure it out, why they don't have change annotations yet.
+
+### 8 August - 22 August ###
+
+Implement change annotations and prepare tests for them.
+
+### 22 August - 4 September ###
+
+Polish done work, prepare to submit Phase 2 evaluations
 
 ## **About me** ##
 
